@@ -11,6 +11,6 @@ app.use('/api/users', userRoutes);
 
 const PORT = 3000;
 
-app.listen(() => {
+app.listen(PORT, () => {
     `Servidor corriendo en el puerto ${PORT}`
 });
