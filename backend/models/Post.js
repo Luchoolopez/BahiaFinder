@@ -26,10 +26,10 @@ const postSchema = new mongoose.Schema({
         required: true,
         maxLength: 50
     },
-    images: [{
-        url: String,
-        public_id: String
-    }],
+    images: {
+        type:[String],
+        default: []
+    },
     status: {
         type: String,
         enum: ['perdido', 'encontrado'],

@@ -1,0 +1,70 @@
+/* Header.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0 40px;
+    height: 90px;
+    background: #121212;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: "Roboto Condensed", sans-serif;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-title h2 {
+    color: #e0e0e0;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    letter-spacing: 1px;
+}
+
+.header-btn {
+    display: flex;
+    gap: 15px;
+    margin-left: auto; /* Empuja los botones a la derecha */
+}
+
+.header-btn button {
+    padding: 10px 20px;
+    background-color: #2c2c2c;
+    color: #b8b8b8;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.5px;
+}
+
+.header-btn button:hover {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.header-btn button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-btn button:last-child:hover {
+    background-color: rgba(200, 0, 0, 0.2);
+    color: #ff6b6b;
+    border-color: rgba(255, 107, 107, 0.3);
+}
