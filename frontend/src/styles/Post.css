@@ -1,0 +1,21 @@
+.posts-container {
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.posts-container h1 {
+    color: #000000;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.loading, .no-posts {
+    text-align: center;
+    color: #cccccc;
+    font-size: 1.2rem;
+    margin-top: 50px;
+}
