@@ -29,3 +29,5 @@ const useCreatePost = () => {
     };
     return { createPost, loading, error };
 }
+
+export default useCreatePost

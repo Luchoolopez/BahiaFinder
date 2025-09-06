@@ -8,9 +8,9 @@ const Post = () => {
     if(loading) return <p className="loading">Cargando posts...</p>;
     if(error) return <p className="error">Error: {error}</p>;
     return(
-        <div className="posts-container-title">
+        <div className="post-container-title">
             <h1>Posts recientes</h1>
-            <div className="post-container">
+            <div className="posts-container">
             {posts.length === 0 && <p className="no-posts">No hay posts aún</p>}
             {posts.map(post => (
                 <PostCard key={post._id} {...post}/>

@@ -1,9 +1,15 @@
-.posts-container {
+/* Post.css */
+.post-container-title {
+    max-width: 2000px;
     margin: 0 auto;
     padding: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+}
+
+.posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
 }
 
 .posts-container h1 {
@@ -11,6 +17,7 @@
     margin-bottom: 30px;
     text-align: center;
     font-weight: 600;
+    grid-column: 1 / -1; /* Hace que el título ocupe todas las columnas */
 }
 
 .loading, .no-posts {
@@ -18,4 +25,5 @@
     color: #cccccc;
     font-size: 1.2rem;
     margin-top: 50px;
+    grid-column: 1 / -1;
 }

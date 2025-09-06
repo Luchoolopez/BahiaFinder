@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6
+    container_name: bahiafinder_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=bahiafinder
+    networks:
+      - bahiafinder_network
+
+  backend:
+    build:
+      context: ./backend  # Ajusta según tu estructura
+      dockerfile: Dockerfile
+    container_name: bahiafinder_backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app  # Ajusta según tu estructura
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - MONGODB_URI=mongodb://mongodb:27017/bahiafinder
+      - PORT=5000
+      - JWT_SECRET=tu_jwt_secreto_aqui
+    depends_on:
+      - mongodb
+    networks:
+      - bahiafinder_network
+
+  frontend:
+    build:
+      context: ./frontend  # Ajusta según tu estructura
+      dockerfile: Dockerfile
+    container_name: bahiafinder_frontend
+    ports:
+      - "5173:5173"  # Puerto de Vite
+    volumes:
+      - ./frontend:/app  # Ajusta según tu estructura
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:5000
+    depends_on:
+      - backend
+    networks:
+      - bahiafinder_network
+    stdin_open: true
+    tty: true
+
+volumes:
+  mongodb_data:
+
+networks:
+  bahiafinder_network:
+    driver: bridge
